@@ -1,17 +1,30 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { QuietButton } from '../components/QuietButton';
+import { SpeakButton } from '../components/SpeakButton';
+import { TeamButton } from '../components/TeamButton';
 
-axios.get('http://localhost:1337/api/cafes').then(response => {
-  console.log(response);
-});
 
-const API_KEY = ""
+
+const CATEGORY_LSIT = [
+  { id:0, label: '조용한분위기', }
+  {}
+  {}
+]
 
 export const HomePage = () => {
+  const [CategoryIndex, setCategoryIndex] = useState(0);
+  const setCategory = (index:number) => {
+    setCategoryIndex(index);
+  }
+}
+
+
   return <div className="space-y-8">
     <div className="text-3xl font-bold pt-8 pl-8">CAFE</div>
     <div className="flex space-x-16 px-40">
-      <div className='w-12'>조용한분위기</div>
+      <div className='w-12'>조용한분위기
+      </div>
       <div>말해도 되는 분위기</div>
       <div>팀플하기 좋은 분위기</div>
     </div>
@@ -29,8 +42,8 @@ export const HomePage = () => {
       <div>
         <div className="text-2xl font-bold my-8">Recommended Cafe</div>
         <div className="space-y-8">
-        <div className="flex flex-row space-x-2">
-         <div className='flex flex-row'>
+         
+         {/* <div className='flex flex-row'>
            <img 
             src="https://images.unsplash.com/photo-1559305616-3f99cd43e353?crop=entropy&cs=tinysrgb&fm=jpg&ixid=Mnw3MjAxN3wwfDF8c2VhcmNofDN8fGNhZmV8ZW58MHx8fHwxNjU1MTQ4NzQ1&ixlib=rb-1.2.1&q=80&q=85&fmt=jpg&crop=entropy&cs=tinysrgb&w=450" 
             alt=""
@@ -46,9 +59,13 @@ export const HomePage = () => {
                    수준 높은 커피와 디저트, 그리고 푸짐한 브런치를 제공합니다.
                    많은 사랑을 받고 있는 이 곳은 잼잼입니다.
               </div>
-            </div>
-         </div>
-        </div>
+             </div>
+          </div> */}
+          <QuietButton label={'JamJam'} />
+          <QuietButton label={'씨스루'} />
+          <QuietButton label={'VALT'} />
+          <QuietButton label={'센터커피'} />
+         {/* 
          <div className='flex flex-row'>
            <img 
             src="https://images.unsplash.com/photo-1567880905822-56f8e06fe630?crop=entropy&cs=tinysrgb&fm=jpg&ixid=Mnw3MjAxN3wwfDF8c2VhcmNofDR8fGNhZmV8ZW58MHx8fHwxNjU1MTQ4NzQ1&ixlib=rb-1.2.1&q=80&q=85&fmt=jpg&crop=entropy&cs=tinysrgb&w=450" 
@@ -70,6 +87,8 @@ export const HomePage = () => {
               </div>
             </div>
          </div>
+          */}
+       {/* 
          <div className="flex flex-row">
            <img 
             src="https://images.unsplash.com/photo-1616091216791-a5360b5fc78a?crop=entropy&cs=tinysrgb&fm=jpg&ixid=Mnw3MjAxN3wwfDF8c2VhcmNofDMyfHxjYWZlfGVufDB8fHx8MTY1NTQ3OTk2Mw&ixlib=rb-1.2.1&q=80&q=85&fmt=jpg&crop=entropy&cs=tinysrgb&w=450" 
@@ -90,13 +109,8 @@ export const HomePage = () => {
               </div>
             </div>
          </div>
-         <div className='w-48 h-64 object-cover'>
-           <img 
-            src="https://images.unsplash.com/photo-1601065700897-d9fa1c093f3e?crop=entropy&cs=tinysrgb&fm=jpg&ixid=Mnw3MjAxN3wwfDF8c2VhcmNofDM3fHxjYWZlfGVufDB8fHx8MTY1NTIxNTIzNQ&ixlib=rb-1.2.1&q=80&q=85&fmt=jpg&crop=entropy&cs=tinysrgb&w=450" 
-            alt="" 
-            />
-         </div>
-      
+        */}
+         
         </div>
       </div>
     </div>
